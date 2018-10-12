@@ -9,6 +9,10 @@ public class GuessesNumber {
         String response = input.nextLine();
         while ( response != "correct")
         {
+            if (response == "higher")
+            {
+                System.out.println("Is it")
+            }
 
         }
         if (response == "correct")
