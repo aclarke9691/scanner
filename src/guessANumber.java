@@ -5,7 +5,7 @@ public class guessANumber {
 
     {
         Scanner input = new Scanner(System.in);
-        int x= (int) Math.random() *11 + 100;
+        int x= (int) (Math.random() * 101) ;
         System.out.println("I am thinking of a number between 1-100. Guess it hehehehe.");
         int number = input.nextInt();
         while (x!= number)
@@ -13,12 +13,18 @@ public class guessANumber {
             if (number>x)
             {
                 System.out.println("Guess lower hehe");
+                number= input.nextInt();
             }
             else
             {
                 System.out.println("Guess higher hehe");
+                number= input.nextInt();
             }
 
+        }
+        if (x == number)
+        {
+            System.out.println("You guessed it! HEE HEE!");
         }
 
 
