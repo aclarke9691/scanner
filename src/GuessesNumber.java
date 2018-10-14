@@ -3,19 +3,28 @@ import java.util.Scanner;
 public class GuessesNumber {
     public static void main(String [] args)
     {
+        String response = "";
         Scanner input= new Scanner(System.in);
-        int x = (int) (Math.random() * 11);
-        System.out.println("I am going to guess the number you are thinking of. My first guess is" + x);
-        String response = input.nextLine();
-        while ( response != "correct")
+        int x = (int) (Math.random() * 101);
+        System.out.println("I am going to guess the number you are thinking of. My first guess is " + x);
+        response = input.nextLine();
+        while ( response.equals("higher") || response.equals("lower"))
         {
-            if (response == "higher")
+            if (response.equals("higher"))
             {
-                System.out.println("Is it")
+                x= x+1;
+                System.out.println("Is it " + x);
+                response= input.nextLine();
+            }
+            if (response.equals("lower"))
+            {
+                x= x-1;
+                System.out.println("Is it " + x);
+                response= input.nextLine();
             }
 
         }
-        if (response == "correct")
+        if (response.equals("correct"))
         {
             System.out.println("Yay I got it right! HEE HEE!");
         }
